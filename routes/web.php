@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\UserControllers;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckStatus;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +16,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.dashboard');
-});
+// Start Login And Register Route Start
+Route::get('/', [UserControllers::class, 'adminLogin'])->name('login');
+Route::get('/login', [UserControllers::class, 'adminLogin'])->name('login');
+Route::post('login-post', [UserControllers::class, 'adminLoginPost'])->name('login.post');
+Route::get('register', [UserControllers::class, 'register'])->name('register');
+Route::post('register-post', [UserControllers::class, 'registerPost'])->name('register.post');
+Route::get('forget-password', [UserControllers::class, 'forgetPassword'])->name('forget.password');
+Route::post('forget-password-post', [UserControllers::class, 'forgetPasswordPost'])->name('forget.password.post');
+Route::get('reset-password/{token}', [UserControllers::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [UserControllers::class, 'submitResetPasswordForm'])->name('reset.password.post');
+// End Login And Register Route End
+// dd(Auth::check());
+Route::middleware([CheckStatus::class])->group(function(){
 
-    Route::get('/property', function () {
-        return view('dashboard.property.property');
-    })->name('property');
+    Route::get('logout', [UserControllers::class, 'logout'])->name('logout');
 
-// Property Route
+    Route::get('/dashboard', function () {
+        return view('dashboard.dashboard');
+    })->name('/dashboard');
+
+    // Property Route
     Route::get('/property', function () {
         return view('dashboard.property.property');
     })->name('property');
@@ -45,82 +60,84 @@ Route::get('/', function () {
     Route::get('/visitor-add-edit', function () {
         return view('dashboard.property.visitor-add-edit');
     })->name('visitor-add-edit');
-// End Property Route
+    // End Property Route
 
-// Visitor
-Route::get('/visitor-show', function () {
-    return view('dashboard.visitors.show-visitors-dt');
-})->name('visitor-show');
+    // Visitor
+    Route::get('/visitor-show', function () {
+        return view('dashboard.visitors.show-visitors-dt');
+    })->name('visitor-show');
 
-Route::get('/visitor-view', function () {
-    return view('dashboard.visitors.visitor-view');
-})->name('visitor-view');
+    Route::get('/visitor-view', function () {
+        return view('dashboard.visitors.visitor-view');
+    })->name('visitor-view');
 
-// flyer
-Route::get('/flyer-brochure-list', function () {
-    return view('dashboard.flyer.flyer-brochure-list');
-})->name('flyer-brochure-list');
+    // flyer
+    Route::get('/flyer-brochure-list', function () {
+        return view('dashboard.flyer.flyer-brochure-list');
+    })->name('flyer-brochure-list');
 
-Route::get('/quick-start-dt', function () {
-    return view('dashboard.quick-start.quick-start-dt');
-})->name('quick-start-dt');
+    Route::get('/quick-start-dt', function () {
+        return view('dashboard.quick-start.quick-start-dt');
+    })->name('quick-start-dt');
 
-Route::get('/quick-setting', function () {
-    return view('dashboard.setting.quick-settings');
-})->name('quick-setting');
+    Route::get('/quick-setting', function () {
+        return view('dashboard.setting.quick-settings');
+    })->name('quick-setting');
 
-Route::get('/profile', function () {
-    return view('dashboard.setting.profile');
-})->name('profile');
+    Route::get('/profile', function () {
+        return view('dashboard.setting.profile');
+    })->name('profile');
 
-Route::get('/smartphone', function () {
-    return view('dashboard.setting.smartphone');
-})->name('smartphone');
+    Route::get('/smartphone', function () {
+        return view('dashboard.setting.smartphone');
+    })->name('smartphone');
 
-Route::get('/fonts-colors-dt', function () {
-    return view('dashboard.setting.fonts-colors-dt');
-})->name('fonts-colors-dt');
+    Route::get('/fonts-colors-dt', function () {
+        return view('dashboard.setting.fonts-colors-dt');
+    })->name('fonts-colors-dt');
 
-Route::get('/crm-dt', function () {
-    return view('dashboard.setting.crm-dt');
-})->name('crm-dt');
+    Route::get('/crm-dt', function () {
+        return view('dashboard.setting.crm-dt');
+    })->name('crm-dt');
 
-Route::get('/account-dt', function () {
-    return view('dashboard.setting.account-dt');
-})->name('account-dt');
+    Route::get('/account-dt', function () {
+        return view('dashboard.setting.account-dt');
+    })->name('account-dt');
 
-Route::get('/welcome-email-dt', function () {
-    return view('dashboard.marketingtools.welcome-email-dt');
-})->name('welcome-email-dt');
+    Route::get('/welcome-email-dt', function () {
+        return view('dashboard.marketingtools.welcome-email-dt');
+    })->name('welcome-email-dt');
 
-Route::get('/drips-dt', function () {
-    return view('dashboard.marketingtools.drips-dt');
-})->name('drips-dt');
+    Route::get('/drips-dt', function () {
+        return view('dashboard.marketingtools.drips-dt');
+    })->name('drips-dt');
 
-Route::get('/feedback-dt', function () {
-    return view('dashboard.marketingtools.feedback-dt');
-})->name('feedback-dt');
+    Route::get('/feedback-dt', function () {
+        return view('dashboard.marketingtools.feedback-dt');
+    })->name('feedback-dt');
 
-Route::get('/your-team', function () {
-    return view('dashboard.manageteam.your-team');
-})->name('your-team');
+    Route::get('/your-team', function () {
+        return view('dashboard.manageteam.your-team');
+    })->name('your-team');
 
-Route::get('/add-agent', function () {
-    return view('dashboard.manageteam.add-agent');
-})->name('add-agent');
+    Route::get('/add-agent', function () {
+        return view('dashboard.manageteam.add-agent');
+    })->name('add-agent');
 
-Route::get('/view-agent', function () {
-    return view('dashboard.manageteam.view-agent');
-})->name('view-agent');
+    Route::get('/view-agent', function () {
+        return view('dashboard.manageteam.view-agent');
+    })->name('view-agent');
 
-Route::get('/edit-agent', function () {
-    return view('dashboard.manageteam.edit-agent');
-})->name('edit-agent');
+    Route::get('/edit-agent', function () {
+        return view('dashboard.manageteam.edit-agent');
+    })->name('edit-agent');
 
-Route::get('/add-coopagent-dt', function () {
-    return view('dashboard.Partners.add-coopagent-dt');
-})->name('add-coopagent-dt');
+    Route::get('/add-coopagent-dt', function () {
+        return view('dashboard.Partners.add-coopagent-dt');
+    })->name('add-coopagent-dt');
 
-Route::get('/coopagents', function () {
-    return view('dashboard.Partners.coopagents');
-})->name('coopagents');
+    Route::get('/coopagents', function () {
+        return view('dashboard.Partners.coopagents');
+    })->name('coopagents');
+
+});

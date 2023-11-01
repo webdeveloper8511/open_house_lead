@@ -33,7 +33,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item menu-open">
-            <a href="{{url('/')}}" class="nav-link active">
+            <a href="{{url('dashboard')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -197,6 +197,12 @@
               <p>
                 Contact Support
               </p>
+            </a>
+          </li>
+          <li class="nav-item">
+              <a href="{{Route('logout')}}" class="nav-link">
+              <i class="fas fa-user-plus nav-icon"></i>
+              <p> Logout </p>
             </a>
           </li>
         </ul>
