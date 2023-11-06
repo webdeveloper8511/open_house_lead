@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    @extends('layouts.head')
+    @include('layouts.head')
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
   <!-- Preloader -->

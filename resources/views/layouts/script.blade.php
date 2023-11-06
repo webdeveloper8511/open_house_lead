@@ -38,6 +38,12 @@
 <script src="{{ asset('assets/plugins/custom-js/custom.js')}}"></script>
 <script src="{{ asset('assets/js/dashboard-script.js')}}"></script>
 <script>
+ClassicEditor
+    .create( document.querySelector( '#editor' ) )
+    .catch( error => {
+        console.error( error );
+    } );
+
   const reuse = (inpu_, prew_, text_) => {
     return inpu_.addEventListener('change', () => {
       if (inpu_.files !== undefined) {

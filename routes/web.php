@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PropertyControllers;
 use App\Http\Controllers\UserControllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckStatus;
@@ -37,9 +38,8 @@ Route::middleware([CheckStatus::class])->group(function(){
     })->name('/dashboard');
 
     // Property Route
-    Route::get('/property', function () {
-        return view('dashboard.property.property');
-    })->name('property');
+    Route::get('/property',[PropertyControllers::class, 'property'])->name('property');
+    Route::post('/property/add',[PropertyControllers::class, 'propertyAdd'])->name('property-add');
 
     Route::get('/add-edit-property-dt', function () {
         return view('dashboard.property.add-edit-property-dt');
@@ -139,5 +139,9 @@ Route::middleware([CheckStatus::class])->group(function(){
     Route::get('/coopagents', function () {
         return view('dashboard.Partners.coopagents');
     })->name('coopagents');
+
+    Route::get('/whats-new', function () {
+        return view('dashboard.whats-new.whats-new');
+    })->name('whats-new');
 
 });

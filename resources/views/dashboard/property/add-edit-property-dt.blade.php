@@ -1,9 +1,15 @@
 @extends('layouts.master')
+<style>
+  .row.bg-blue {
+    margin-top: 15px;
+}
+</style>
 @section('content')
         <section class="add-edit-property-dt-section d-flex h-100vh p-4 bg-black-50">
           <div class="container-fluid  m-auto text-center shadow p-3 rounded">
             <h1 class="text-center mb-3">Add / Edit Property or Event </h1>
-            <form action="">
+            <form action="{{route('property-add')}}" method="post" enctype="multipart/form-data">
+              @csrf
               <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
@@ -19,19 +25,19 @@
                         <div class="d-flex flex-wrap justify-content-center align-items-end text-start">
                           <div class="form-group">
                             <label for="Street">Street</label>
-                            <input type="text" id="Street" name="Street" placeholder="Enter Location:" required>
+                            <input type="text" id="Street" name="street" value="{{old('street')}}" placeholder="Enter Location:" required>
                           </div>
                           <div class="form-group">
                             <label for="city">City</label>
-                            <input type="text" id="city" name="city" placeholder="City:" required>
+                            <input type="text" id="city" name="city" value="{{old('city')}}" placeholder="City:" required>
                           </div>
                           <div class="form-group">
                             <label for="state">State</label>
-                            <input type="text" id="state" name="state" placeholder="State:" required>
+                            <input type="text" id="state" name="state" value="{{old('state')}}" placeholder="State:" required>
                           </div>
                           <div class="form-group">
                             <label for="zip">Zip Code</label>
-                            <input type="text" id="zip" name="zip" placeholder="Zip Code:" required>
+                            <input type="text" id="zip" name="zip_code" value="{{old('zip_code')}}" placeholder="Zip Code:" required>
                           </div>
                         </div>
                       </div>
@@ -47,26 +53,26 @@
                       <h5 class="my-3">OPTIONAL ONLY IF USING FLYERS, VIRTUAL BROCHURES OR MINI PROPERTY SITES.</h5>
                       <div class="row align-items-center py-4">
                         <div class="col-5">
-                          <img class="img-fluid" src="../dist/img/flyers.jpg" alt="">
+                          <img class="img-fluid" src="{{url('assets/dist/img/flyers.jpg')}}" alt="">
                         </div>
                         <div class="col-7 px-4">
                           <div class="d-flex flex-wrap justify-content-center align-items-center second-form">
                             <div class="row justify-content-center">
                               <div class="form-group col-6">
                                 <label class="text-left" for="OPEN_HOUSE">Heading at Top of Flyer, like "OPEN HOUSE"</label>
-                                <input type="text" id="OPEN_HOUSE" name="OPEN_HOUSE" placeholder="Such as 'Open House on 12/31/2020 from 1pm to 4pm, Refreshments will be served' " required>
+                                <input type="text" id="OPEN_HOUSE" value="{{old('open_house')}}" name="open_house" placeholder="Such as 'Open House on 12/31/2020 from 1pm to 4pm, Refreshments will be served' " required>
                               </div>
                               <div class="form-group col-6">
                                 <label class="text-left" for="anything">Open Date/Time or anything</label>
-                                <input type="text" id="anything" name="anything" placeholder="Such as Open House on 12/31/2020 from 1pm to 4pm." required>
+                                <input type="text" id="anything" value="{{old('datatime_anything')}}"  name="datatime_anything" placeholder="Such as Open House on 12/31/2020 from 1pm to 4pm." required>
                               </div>
                               <div class="form-group col-6">
                                 <label class="text-left" for="Before-Price">Before Price such as Offered at:, or Anything</label>
-                                <input type="text" id="state" name="Before-Price" placeholder="Before Price such as Offered at:" required>
+                                <input type="text" id="state" value="{{old('before_price')}}" name="before_price" placeholder="Before Price such as Offered at:" required>
                               </div>
                               <div class="form-group col-6">
                                 <label class="text-left" for="Price">Price (Use only a $ and a number)</label>
-                                <input type="text" id="Price" name="Price" placeholder="Price (such as $900,000)" required>
+                                <input type="text" id="Price" name="Price" value="{{old('price')}}" placeholder="Price (such as $900,000)" required>
                               </div>
                             </div>
                           </div>
@@ -122,9 +128,9 @@
                                     </div>
                                   </div>
                                   <div class="w-auto text-start">
-                                    <p id="img-name">Image Name</p>
+                                    <p id="img-name">Image Name flyer_riders_first_image</p>
                                     <button class="file-upload">
-                                      <input id="inpu" type="file" class="file-input">Choose File </button>
+                                      <input id="inpu" type="file" name="flyer_riders_first_image" class="file-input">Choose File </button>
                                   </div>
                                 </div>
                               </div>
@@ -143,7 +149,7 @@
                                   <div class="w-auto text-start">
                                     <p id="img-name1">Image Name</p>
                                     <button class="file-upload">
-                                      <input id="inpu1" type="file" class="file-input">Choose File </button>
+                                      <input id="inpu1" type="file" name="flyer_riders_second_image" class="file-input">Choose File </button>
                                   </div>
                                 </div>
                               </div>
@@ -162,7 +168,7 @@
                                   <div class="w-auto text-start">
                                     <p id="img-name2">Image Name</p>
                                     <button class="file-upload">
-                                      <input id="inpu2" type="file" class="file-input">Choose File </button>
+                                      <input id="inpu2" type="file" name="flyer_riders_three_image" class="file-input">Choose File </button>
                                   </div>
                                 </div>
                               </div>
@@ -185,7 +191,7 @@
                           <div class="row text-start">
                             <div class="col-4">
                               <label class="mt-2">Bedrooms</label>
-                              <select class="form-select" aria-label="Default select example">
+                              <select class="form-select" name="bedrooms" aria-label="Default select example">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -199,7 +205,7 @@
                             </div>
                             <div class="col-4">
                               <label class="mt-2" for="">Bathrooms</label>
-                              <select class="form-select" aria-label="Default select example">
+                              <select class="form-select" name="bathrooms" aria-label="Default select example">
                                 <option value="1">1</option>
                                 <option value="1.5">1.5</option>
                                 <option value="2">2</option>
@@ -217,16 +223,16 @@
                             </div>
                             <div class="col-4">
                               <label class="mt-2" for="">SQ Footage</label>
-                              <input type="text" id="SQ-Footage" name="SQ-Footage" placeholder="SQ Footage" required>
+                              <input type="text" id="SQ-Footage" name="sq-Footage" value="{{old('sq-Footage')}}" placeholder="SQ Footage" required>
                             </div>
                             <div class="col-12">
                               <div>
                                 <label class="mt-2" for=""> Optional: Brief Description *Used on Property Sites & some of the Classic Sign-In pages. </label>
-                                <textarea id="" name="" rows="4" cols="50"></textarea>
+                                <textarea id="" name="property_sites_Desc" rows="4" cols="50"></textarea>
                               </div>
                               <div>
                                 <label class="mt-2" for=""> Add a custom landing page or link for the Rider & Virtual Brochure QR Code or Text Code. (will be used instead of our Mini Property Site) </label>
-                                <input type="text" id="" name="" placeholder="" required>
+                                <input type="text" id="" name="mini_property_site" placeholder="" required>
                               </div>
                             </div>
                           </div>
@@ -247,7 +253,7 @@
                               <div class="w-auto text-start">
                                 <p id="img-name3">Image Name</p>
                                 <button class="file-upload">
-                                  <input id="inpu3" type="file" multiple="multiple" class="file-input">Choose File </button>
+                                  <input id="inpu3" type="file" name="extra_image_mini_property_sites" multiple="multiple" class="file-input">Choose File </button>
                               </div>
                             </div>
                             <div class="col-12 text-start mb-3">
@@ -633,7 +639,7 @@
                       </div>
                       <div class="row bg-off-white">
                         <h5 class="text-start">Add a short 'Thank You' Message After a Visitor Signs In</h5>
-                        <textarea class="text-editor-code">
+                        <textarea class="text-editor-code" name="short_thank_you_message">
                           <p>
                             Thank you for visiting my Open House today. Please feel free to reach out to me at anytime if you have any questions about this property or if you have a minute to discuss your Real Estate plans. My contact information is below.
                           </p>
@@ -709,7 +715,7 @@
                         <div class="block-1">
                           <div class="row">
                             <h5 class="text-start">Add a short 'Thank You' Message After a Visitor Signs In</h5>
-                            <textarea class="text-editor-code"></textarea>
+                            <textarea class="text-editor-code" name="smartphone_thank_you_message"></textarea>
                           </div>
                         </div>
                         <div class="block-2">
