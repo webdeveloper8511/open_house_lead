@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Perporty extends Model
 {
     use HasFactory;
+
+    protected $table = 'property';
+
+    public $timestamps = false;
 }

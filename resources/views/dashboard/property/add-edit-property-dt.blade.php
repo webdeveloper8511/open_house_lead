@@ -72,7 +72,7 @@
                               </div>
                               <div class="form-group col-6">
                                 <label class="text-left" for="Price">Price (Use only a $ and a number)</label>
-                                <input type="text" id="Price" name="Price" value="{{old('price')}}" placeholder="Price (such as $900,000)" required>
+                                <input type="text" id="Price" name="price" value="{{old('price')}}" placeholder="Price (such as $900,000)" required>
                               </div>
                             </div>
                           </div>
@@ -223,12 +223,12 @@
                             </div>
                             <div class="col-4">
                               <label class="mt-2" for="">SQ Footage</label>
-                              <input type="text" id="SQ-Footage" name="sq-Footage" value="{{old('sq-Footage')}}" placeholder="SQ Footage" required>
+                              <input type="text" id="SQ-Footage" name="sq_footage" value="{{old('sq-Footage')}}" placeholder="SQ Footage" required>
                             </div>
                             <div class="col-12">
                               <div>
                                 <label class="mt-2" for=""> Optional: Brief Description *Used on Property Sites & some of the Classic Sign-In pages. </label>
-                                <textarea id="" name="property_sites_Desc" rows="4" cols="50"></textarea>
+                                <textarea id="" name="property_sites_desc" rows="4" cols="50"></textarea>
                               </div>
                               <div>
                                 <label class="mt-2" for=""> Add a custom landing page or link for the Rider & Virtual Brochure QR Code or Text Code. (will be used instead of our Mini Property Site) </label>
@@ -280,9 +280,9 @@
                           <div class="form">
                             <h5>Send a Unique Welcome Email?</h5>
                             <div class="switch-field">
-                              <input type="radio" id="radio-one" name="switch-one1" value="yes" checked />
+                              <input type="radio" id="radio-one" name="switch_one1" value="yes" checked />
                               <label for="radio-one">Yes</label>
-                              <input type="radio" id="radio-two" name="switch-one1" value="no" />
+                              <input type="radio" id="radio-two" name="switch_one1" value="no" />
                               <label for="radio-two">No</label>
                             </div>
                             <p>Choose Yes to Automatically Send to Visitors.</p>
@@ -291,9 +291,9 @@
                             <h5>Enable Welcome Email Signature?</h5>
                             <h5>To disable our signature choose 'No' to use your own.</h5>
                             <div class="switch-field">
-                              <input type="radio" id="radio-three" name="switch-three" value="yes" checked />
+                              <input type="radio" id="radio-three" name="switch_three" value="yes" checked />
                               <label for="radio-three">Yes</label>
-                              <input type="radio" id="radio-four" name="switch-three" value="no" />
+                              <input type="radio" id="radio-four" name="switch_three" value="no" />
                               <label for="radio-four">No</label>
                             </div>
                           </div>
@@ -302,11 +302,11 @@
                           <div class="row justify-content-center">
                             <div class="form-group col-6">
                               <label class="text-left" for="">Welcome Email Subject</label>
-                              <input type="text" id="" name="" placeholder="Add the Welcome Email Subject" required="">
+                              <input type="text" id="" name="welcome_email_sub" placeholder="Add the Welcome Email Subject" required="">
                             </div>
                             <div class="form-group col-6">
                               <label class="text-left" for="anything">Email Headline (inside email)</label>
-                              <input type="text" id="anything" name="anything" placeholder="Add the Welcome Email Headline here" required="">
+                              <input type="text" id="anything" name="headline_email" placeholder="Add the Welcome Email Headline here" required="">
                             </div>
                           </div>
                           <div class="text-start">
@@ -314,7 +314,7 @@
                             <div class="row align-items-center">
                               <div class="col-6">
                                 <label class="mt-2">Headline Color</label>
-                                <select  class="form-select" aria-label="Default select example">
+                                <select  class="form-select" name="headline_color" aria-label="Default select example">
                                   <option value="Custom"  selected="selected">Custom</option>
                                   <option value="Green">Green</option>
                                   <option value="Black">Black</option>
@@ -468,14 +468,14 @@
                                 </select>
                               </div>
                               <div class="col-6">
-                                <label class="mt-2" for="favcolor">Select your favorite color:</label>
-                                <input type="color" id="favcolor" name="favcolor" value="#FFC0CB"></input>
+                                <label class="mt-2" for="favcolor">Headline Custom Color:</label>
+                                <input type="color" id="favcolor" name="headline_custom_color" value="#FFC0CB"></input>
                               </div>
                             </div>
                             <div class="row align-items-center">
                               <div class="col-6">
                                 <label class="mt-2">Headline Text Color</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" name="headline_text_color" aria-label="Default select example">
                                   <option value="Custom" selected="selected">Custom</option>
                                   <option value="White">White</option>
                                   <option value="Gold">Gold</option>
@@ -630,8 +630,8 @@
                                 </select>
                               </div>
                               <div class="col-6">
-                                <label class="mt-2" for="favcolor">Select your favorite color:</label>
-                                <input type="color" id="favcolor" name="favcolor" value="#FFC0CB">
+                                <label class="mt-2" for="favcolor">Custom Text Color:</label>
+                                <input type="color" id="favcolor" name="custom_text_color" value="#FFC0CB">
                               </div>
                             </div>
                           </div>
@@ -662,7 +662,7 @@
                               <div class="w-auto text-start">
                                 <p id="img-name4">Image Name</p>
                                 <button class="file-upload">
-                                  <input id="inpu4" type="file" class="file-input">Choose File </button>
+                                  <input id="inpu4" name="add_change_email_image" type="file" class="file-input">Choose File </button>
                               </div>
                             </div>
                           </div>
@@ -683,7 +683,7 @@
                               <div class="w-auto text-start">
                                 <p id="img-name5">Image Name</p>
                                 <button class="file-upload">
-                                  <input id="inpu5" type="file" class="file-input">Choose File </button>
+                                  <input id="inpu5" type="file" name="attachment_image" class="file-input">Choose File </button>
                               </div>
                             </div>
                           </div>
@@ -703,9 +703,9 @@
                         <div class="col-12">
                           <h5 class="mb-2">Enable Custom 'Thank You' page settings?</h5>
                           <div class="switch-field">
-                            <input type="radio" id="smartphone-thankyou-yes" name="switch-one" value="yes" checked />
+                            <input type="radio" id="smartphone-thankyou-yes" name="smartphone_switch_one" value="yes" checked />
                             <label for="smartphone-thankyou-yes">Yes</label>
-                            <input type="radio" id="smartphone-thankyou-no" name="switch-one" value="no" />
+                            <input type="radio" id="smartphone-thankyou-no" name="smartphone_switch_one" value="no" />
                             <label for="smartphone-thankyou-no">No</label>
                           </div>
                           <h6>These Smartphone Settings including the 'Thank You' message as well as files and links are specific to this Property or Event.</h6>
@@ -746,15 +746,15 @@
                                   <div class="data-content">
                                     <div class="content-field field-1 description">
                                       <label>Short Description</label>
-                                      <input type="text" id="file-desc_1" name="file-desc_1" placeholder="*Such as 'Floorplans'">
+                                      <input type="text" id="file-desc_1" name="file_desc_1" placeholder="*Such as 'Floorplans'">
                                     </div>
                                     <div class="content-field field-2 youtube_link">
                                       <label>Link</label>
-                                      <input type="text" id="file-link_1" name="file-link_1" placeholder="https://www.yourwebsite.com">
+                                      <input type="text" id="file-link_1" name="file_link_1" placeholder="https://www.yourwebsite.com">
                                     </div>
                                     <div class="content-field field-3 upload_file">
                                       <label>Upload File</label>
-                                      <input type="file" id="file-file_1" name="file-file_1">
+                                      <input type="file" id="file-file_1" name="file_file_1">
                                     </div>
                                   </div>
                                 </div>
@@ -776,15 +776,15 @@
                                   <div class="data-content">
                                     <div class="content-field field-1 description">
                                       <label>Short Description</label>
-                                      <input type="text" id="file-desc_2" name="file-desc_2" placeholder="*Such as 'Floorplans'">
+                                      <input type="text" id="file-desc_2" name="file_desc_2" placeholder="*Such as 'Floorplans'">
                                     </div>
                                     <div class="content-field field-2 youtube_link">
                                       <label>Link</label>
-                                      <input type="text" id="file-link_2" name="file-link_2" placeholder="https://www.yourwebsite.com">
+                                      <input type="text" id="file-link_2" name="file_link_2" placeholder="https://www.yourwebsite.com">
                                     </div>
                                     <div class="content-field field-3 upload_file">
                                       <label>Upload File</label>
-                                      <input type="file" id="file-file_2" name="file-file_2">
+                                      <input type="file" id="file-file_2" name="file_file_2">
                                     </div>
                                   </div>
                                 </div>
@@ -806,15 +806,15 @@
                                   <div class="data-content">
                                     <div class="content-field field-1 description">
                                       <label>Short Description</label>
-                                      <input type="text" id="file-desc_3" name="file-desc_3" placeholder="*Such as 'Floorplans'">
+                                      <input type="text" id="file-desc_3" name="file_desc_3" placeholder="*Such as 'Floorplans'">
                                     </div>
                                     <div class="content-field field-2 youtube_link">
                                       <label>Link</label>
-                                      <input type="text" id="file-link_3" name="file-link_3" placeholder="https://www.yourwebsite.com">
+                                      <input type="text" id="file-link_3" name="file_link_3" placeholder="https://www.yourwebsite.com">
                                     </div>
                                     <div class="content-field field-3 upload_file">
                                       <label>Upload File</label>
-                                      <input type="file" id="file-file_3" name="file-file_3">
+                                      <input type="file" id="file-file_3" name="file_file_3">
                                     </div>
                                   </div>
                                 </div>
