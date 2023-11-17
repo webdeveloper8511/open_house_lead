@@ -39,19 +39,23 @@ Route::middleware([CheckStatus::class])->group(function(){
 
     // Property Route
     Route::get('/property',[PropertyControllers::class, 'property'])->name('property');
+    Route::get('/property/create',[PropertyControllers::class, 'propertyCreate'])->name('property-create');
     Route::post('/property/add',[PropertyControllers::class, 'propertyAdd'])->name('property-add');
+    Route::get('/property/edit/{id}',[PropertyControllers::class, 'propertyEdit'])->name('property-edit');
+    Route::post('/property/update/{id}',[PropertyControllers::class, 'propertyUpdate'])->name('property-update');
+    Route::post('/rider/codes',[PropertyControllers::class, 'riderCodes'])->name('rider-codes');
 
-    Route::get('/add-edit-property-dt', function () {
-        return view('dashboard.property.add-edit-property-dt');
-    })->name('add-edit-property-dt');
+    // Route::get('/add-edit-property-dt', function () {
+    //     return view('dashboard.property.add-edit-property-dt');
+    // })->name('add-edit-property-dt');
 
     Route::get('/create-flyer22-dt', function () {
         return view('dashboard.property.create-flyer22-dt');
     })->name('create-flyer22-dt');
 
-    Route::get('/add-edit-property-dt-edit', function () {
-        return view('dashboard.property.add-edit-property-dt-edit');
-    })->name('add-edit-property-dt-edit');
+    // Route::get('/add-edit-property-dt-edit', function () {
+    //     return view('dashboard.property.add-edit-property-dt-edit');
+    // })->name('add-edit-property-dt-edit');
 
     Route::get('/show-opens-dt-view-add-visitors', function () {
         return view('dashboard.property.show-opens-dt-view-add-visitors');

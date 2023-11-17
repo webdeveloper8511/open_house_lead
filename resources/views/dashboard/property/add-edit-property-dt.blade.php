@@ -7,7 +7,7 @@
 @section('content')
         <section class="add-edit-property-dt-section d-flex h-100vh p-4 bg-black-50">
           <div class="container-fluid  m-auto text-center shadow p-3 rounded">
-            <h1 class="text-center mb-3">Add / Edit Property or Event </h1>
+            <h1 class="text-center mb-3">Add Property or Event </h1>
             <form action="{{route('property-add')}}" method="post" enctype="multipart/form-data">
               @csrf
               <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -128,7 +128,7 @@
                                     </div>
                                   </div>
                                   <div class="w-auto text-start">
-                                    <p id="img-name">Image Name flyer_riders_first_image</p>
+                                    <p id="img-name">Image Name</p>
                                     <button class="file-upload">
                                       <input id="inpu" type="file" name="flyer_riders_first_image" class="file-input">Choose File </button>
                                   </div>
@@ -314,325 +314,31 @@
                             <div class="row align-items-center">
                               <div class="col-6">
                                 <label class="mt-2">Headline Color</label>
-                                <select  class="form-select" name="headline_color" aria-label="Default select example">
-                                  <option value="Custom"  selected="selected">Custom</option>
-                                  <option value="Green">Green</option>
-                                  <option value="Black">Black</option>
-                                  <option value="Red">Red</option>
-                                  <option value="White">White</option>
-                                  <option value="Silver">Silver</option>
-                                  <option value="Gray">Gray</option>
-                                  <option value="Maroon">Maroon</option>
-                                  <option value="Purple">Purple</option>
-                                  <option value="Fuchsia">Fuchsia</option>
-                                  <option value="Lime">Lime</option>
-                                  <option value="Olive">Olive</option>
-                                  <option value="Yellow">Yellow</option>
-                                  <option value="Navy">Navy</option>
-                                  <option value="Blue">Blue</option>
-                                  <option value="Teal">Teal</option>
-                                  <option value="Aqua">Aqua</option>
-                                  <option value="Aliceblue">Aliceblue</option>
-                                  <option value="Antiquewhite">Antiquewhite</option>
-                                  <option value="Aquamarine">Aquamarine</option>
-                                  <option value="Azure">Azure</option>
-                                  <option value="#84bacd">BasicBlue</option>
-                                  <option value="Beige">Beige</option>
-                                  <option value="Bisque">Bisque</option>
-                                  <option value="Blanchedalmond">Blanchedalmond</option>
-                                  <option value="Blueviolet">Blueviolet</option>
-                                  <option value="Brown">Brown</option>
-                                  <option value="Burlywood">Burlywood</option>
-                                  <option value="Cadetblue">Cadetblue</option>
-                                  <option value="Chartreuse">Chartreuse</option>
-                                  <option value="Chocolate">Chocolate</option>
-                                  <option value="Coral">Coral</option>
-                                  <option value="Cornflowerblue">Cornflowerblue</option>
-                                  <option value="Cornsilk">Cornsilk</option>
-                                  <option value="Crimson">Crimson</option>
-                                  <option value="Cyan">Cyan</option>
-                                  <option value="Darkblue">Darkblue</option>
-                                  <option value="Darkcyan">Darkcyan</option>
-                                  <option value="#422d1a">DarkBrown</option>
-                                  <option value="Darkgoldenrod">Darkgoldenrod</option>
-                                  <option value="Darkgray">Darkgray</option>
-                                  <option value="Darkgreen">Darkgreen</option>
-                                  <option value="Darkgrey">Darkgrey</option>
-                                  <option value="Darkkhaki">Darkkhaki</option>
-                                  <option value="Darkmagenta">Darkmagenta</option>
-                                  <option value="Darkolivegreen">Darkolivegreen</option>
-                                  <option value="Darkorange">Darkorange</option>
-                                  <option value="Darkorchid">Darkorchid</option>
-                                  <option value="Darkred">Darkred</option>
-                                  <option value="Darksalmon">Darksalmon</option>
-                                  <option value="Darkseagreen">Darkseagreen</option>
-                                  <option value="Darkslateblue">Darkslateblue</option>
-                                  <option value="Darkslategray">Darkslategray</option>
-                                  <option value="Darkslategrey">Darkslategrey</option>
-                                  <option value="Darkturquoise">Darkturquoise</option>
-                                  <option value="Darkviolet">Darkviolet</option>
-                                  <option value="Deeppink">Deeppink</option>
-                                  <option value="Deepskyblue">Deepskyblue</option>
-                                  <option value="Dimgray">Dimgray</option>
-                                  <option value="Dimgrey">Dimgrey</option>
-                                  <option value="Dodgerblue">Dodgerblue</option>
-                                  <option value="Firebrick">Firebrick</option>
-                                  <option value="Floralwhite">Floralwhite</option>
-                                  <option value="Forestgreen">Forestgreen</option>
-                                  <option value="Gainsboro">Gainsboro</option>
-                                  <option value="Ghostwhite">Ghostwhite</option>
-                                  <option value="Gold">Gold</option>
-                                  <option value="Goldenrod">Goldenrod</option>
-                                  <option value="Greenyellow">Greenyellow</option>
-                                  <option value="Grey">Grey</option>
-                                  <option value="Honeydew">Honeydew</option>
-                                  <option value="Hotpink">Hotpink</option>
-                                  <option value="Indianred">Indianred</option>
-                                  <option value="Indigo">Indigo</option>
-                                  <option value="Ivory">Ivory</option>
-                                  <option value="Khaki">Khaki</option>
-                                  <option value="Lavender">Lavender</option>
-                                  <option value="Lavenderblush">Lavenderblush</option>
-                                  <option value="Lawngreen">Lawngreen</option>
-                                  <option value="Lemonchiffon">Lemonchiffon</option>
-                                  <option value="Lightblue">Lightblue</option>
-                                  <option value="Lightcoral">Lightcoral</option>
-                                  <option value="Lightcyan">Lightcyan</option>
-                                  <option value="Lightgoldenrodyellow">Lightgoldenrodyellow</option>
-                                  <option value="Lightgray">Lightgray</option>
-                                  <option value="Lightgreen">Lightgreen</option>
-                                  <option value="Lightgrey">Lightgrey</option>
-                                  <option value="Lightpink">Lightpink</option>
-                                  <option value="Lightsalmon">Lightsalmon</option>
-                                  <option value="Lightseagreen">Lightseagreen</option>
-                                  <option value="Lightskyblue">Lightskyblue</option>
-                                  <option value="Lightslategray">Lightslategray</option>
-                                  <option value="Lightslategrey">Lightslategrey</option>
-                                  <option value="Lightsteelblue">Lightsteelblue</option>
-                                  <option value="Lightyellow">Lightyellow</option>
-                                  <option value="Limegreen">Limegreen</option>
-                                  <option value="Linen">Linen</option>
-                                  <option value="Magenta">Magenta</option>
-                                  <option value="Mediumaquamarine">Mediumaquamarine</option>
-                                  <option value="Mediumblue">Mediumblue</option>
-                                  <option value="Mediumorchid">Mediumorchid</option>
-                                  <option value="Mediumpurple">Mediumpurple</option>
-                                  <option value="Mediumseagreen">Mediumseagreen</option>
-                                  <option value="Mediumslateblue">Mediumslateblue</option>
-                                  <option value="Mediumspringgreen">Mediumspringgreen</option>
-                                  <option value="Mediumturquoise">Mediumturquoise</option>
-                                  <option value="Mediumvioletred">Mediumvioletred</option>
-                                  <option value="Midnightblue">Midnightblue</option>
-                                  <option value="Mintcream">Mintcream</option>
-                                  <option value="Mistyrose">Mistyrose</option>
-                                  <option value="Moccasin">Moccasin</option>
-                                  <option value="Navajowhite">Navajowhite</option>
-                                  <option value="Oldlace">Oldlace</option>
-                                  <option value="Olivedrab">Olivedrab</option>
-                                  <option value="Orange">Orange</option>
-                                  <option value="Orangered">Orangered</option>
-                                  <option value="Orchid">Orchid</option>
-                                  <option value="Palegoldenrod">Palegoldenrod</option>
-                                  <option value="Palegreen">Palegreen</option>
-                                  <option value="Paleturquoise">Paleturquoise</option>
-                                  <option value="Palevioletred">Palevioletred</option>
-                                  <option value="Papayawhip">Papayawhip</option>
-                                  <option value="Peachpuff">Peachpuff</option>
-                                  <option value="Peru">Peru</option>
-                                  <option value="Pink">Pink</option>
-                                  <option value="Plum">Plum</option>
-                                  <option value="Powderblue">Powderblue</option>
-                                  <option value="Rosybrown">Rosybrown</option>
-                                  <option value="Royalblue">Royalblue</option>
-                                  <option value="Saddlebrown">Saddlebrown</option>
-                                  <option value="Salmon">Salmon</option>
-                                  <option value="Sandybrown">Sandybrown</option>
-                                  <option value="Seagreen">Seagreen</option>
-                                  <option value="Seashell">Seashell</option>
-                                  <option value="Sienna">Sienna</option>
-                                  <option value="Skyblue">Skyblue</option>
-                                  <option value="Slateblue">Slateblue</option>
-                                  <option value="Slategray">Slategray</option>
-                                  <option value="Slategrey">Slategrey</option>
-                                  <option value="Snow">Snow</option>
-                                  <option value="Springgreen">Springgreen</option>
-                                  <option value="Steelblue">Steelblue</option>
-                                  <option value="Tan">Tan</option>
-                                  <option value="Thistle">Thistle</option>
-                                  <option value="Tomato">Tomato</option>
-                                  <option value="Turquoise">Turquoise</option>
-                                  <option value="Violet">Violet</option>
-                                  <option value="Wheat">Wheat</option>
-                                  <option value="Whitesmoke">Whitesmoke</option>
-                                  <option value="Yellowgreen">Yellowgreen</option>
+                                <select  class="form-select" name="headline_color" aria-label="Default select example" id="headlin_color">
+                                  @foreach($headlineTextColor as $headlineTextColors)
+                                  <option value="{{$headlineTextColors->name}}" {{ ( $headlineTextColors->name == 'Custom' ) ? 'selected' : '' }}>{{ $headlineTextColors->name }}</option>
+                                  @endforeach
                                 </select>
                               </div>
-                              <div class="col-6">
+                              <div class="col-6" id="Headline_custom_color">
                                 <label class="mt-2" for="favcolor">Headline Custom Color:</label>
-                                <input type="color" id="favcolor" name="headline_custom_color" value="#FFC0CB"></input>
+                                <input type="color" id="favcolor_headline" name="" value="#FFC0CB"></input>
+                                <input type="hidden" name="headline_custom_color" id="choosen-color" value="">
                               </div>
                             </div>
                             <div class="row align-items-center">
                               <div class="col-6">
                                 <label class="mt-2">Headline Text Color</label>
-                                <select class="form-select" name="headline_text_color" aria-label="Default select example">
-                                  <option value="Custom" selected="selected">Custom</option>
-                                  <option value="White">White</option>
-                                  <option value="Gold">Gold</option>
-                                  <option value="Yellow">Yellow</option>
-                                  <option value="Green">Green</option>
-                                  <option value="Black">Black</option>
-                                  <option value="Red">Red</option>
-                                  <option value="Silver">Silver</option>
-                                  <option value="Gray">Gray</option>
-                                  <option value="Maroon">Maroon</option>
-                                  <option value="Purple">Purple</option>
-                                  <option value="Fuchsia">Fuchsia</option>
-                                  <option value="Lime">Lime</option>
-                                  <option value="Olive">Olive</option>
-                                  <option value="Navy">Navy</option>
-                                  <option value="Blue">Blue</option>
-                                  <option value="Teal">Teal</option>
-                                  <option value="Aqua">Aqua</option>
-                                  <option value="Aliceblue">Aliceblue</option>
-                                  <option value="Antiquewhite">Antiquewhite</option>
-                                  <option value="Aquamarine">Aquamarine</option>
-                                  <option value="Azure">Azure</option>
-                                  <option value="#84bacd">BasicBlue</option>
-                                  <option value="Beige">Beige</option>
-                                  <option value="Bisque">Bisque</option>
-                                  <option value="Blanchedalmond">Blanchedalmond</option>
-                                  <option value="Blueviolet">Blueviolet</option>
-                                  <option value="Brown">Brown</option>
-                                  <option value="Burlywood">Burlywood</option>
-                                  <option value="Cadetblue">Cadetblue</option>
-                                  <option value="Chartreuse">Chartreuse</option>
-                                  <option value="Chocolate">Chocolate</option>
-                                  <option value="Coral">Coral</option>
-                                  <option value="Cornflowerblue">Cornflowerblue</option>
-                                  <option value="Cornsilk">Cornsilk</option>
-                                  <option value="Crimson">Crimson</option>
-                                  <option value="Cyan">Cyan</option>
-                                  <option value="Darkblue">Darkblue</option>
-                                  <option value="Darkcyan">Darkcyan</option>
-                                  <option value="#422d1a">DarkBrown</option>
-                                  <option value="Darkgoldenrod">Darkgoldenrod</option>
-                                  <option value="Darkgray">Darkgray</option>
-                                  <option value="Darkgreen">Darkgreen</option>
-                                  <option value="Darkgrey">Darkgrey</option>
-                                  <option value="Darkkhaki">Darkkhaki</option>
-                                  <option value="Darkmagenta">Darkmagenta</option>
-                                  <option value="Darkolivegreen">Darkolivegreen</option>
-                                  <option value="Darkorange">Darkorange</option>
-                                  <option value="Darkorchid">Darkorchid</option>
-                                  <option value="Darkred">Darkred</option>
-                                  <option value="Darksalmon">Darksalmon</option>
-                                  <option value="Darkseagreen">Darkseagreen</option>
-                                  <option value="Darkslateblue">Darkslateblue</option>
-                                  <option value="Darkslategray">Darkslategray</option>
-                                  <option value="Darkslategrey">Darkslategrey</option>
-                                  <option value="Darkturquoise">Darkturquoise</option>
-                                  <option value="Darkviolet">Darkviolet</option>
-                                  <option value="Deeppink">Deeppink</option>
-                                  <option value="Deepskyblue">Deepskyblue</option>
-                                  <option value="Dimgray">Dimgray</option>
-                                  <option value="Dimgrey">Dimgrey</option>
-                                  <option value="Dodgerblue">Dodgerblue</option>
-                                  <option value="Firebrick">Firebrick</option>
-                                  <option value="Floralwhite">Floralwhite</option>
-                                  <option value="Forestgreen">Forestgreen</option>
-                                  <option value="Gainsboro">Gainsboro</option>
-                                  <option value="Ghostwhite">Ghostwhite</option>
-                                  <option value="Gold">Gold</option>
-                                  <option value="Goldenrod">Goldenrod</option>
-                                  <option value="Greenyellow">Greenyellow</option>
-                                  
-                                  <option value="Grey">Grey</option>
-                                  <option value="Honeydew">Honeydew</option>
-                                  <option value="Hotpink">Hotpink</option>
-                                  <option value="Indianred">Indianred</option>
-                                  <option value="Indigo">Indigo</option>
-                                  <option value="Ivory">Ivory</option>
-                                  <option value="Khaki">Khaki</option>
-                                  <option value="Lavender">Lavender</option>
-                                  <option value="Lavenderblush">Lavenderblush</option>
-                                  <option value="Lawngreen">Lawngreen</option>
-                                  <option value="Lemonchiffon">Lemonchiffon</option>
-                                  <option value="Lightblue">Lightblue</option>
-                                  <option value="Lightcoral">Lightcoral</option>
-                                  <option value="Lightcyan">Lightcyan</option>
-                                  <option value="Lightgoldenrodyellow">Lightgoldenrodyellow</option>
-                                  <option value="Lightgray">Lightgray</option>
-                                  <option value="Lightgreen">Lightgreen</option>
-                                  <option value="Lightgrey">Lightgrey</option>
-                                  <option value="Lightpink">Lightpink</option>
-                                  <option value="Lightsalmon">Lightsalmon</option>
-                                  <option value="Lightseagreen">Lightseagreen</option>
-                                  <option value="Lightskyblue">Lightskyblue</option>
-                                  <option value="Lightslategray">Lightslategray</option>
-                                  <option value="Lightslategrey">Lightslategrey</option>
-                                  <option value="Lightsteelblue">Lightsteelblue</option>
-                                  <option value="Lightyellow">Lightyellow</option>
-                                  <option value="Limegreen">Limegreen</option>
-                                  <option value="Linen">Linen</option>
-                                  <option value="Magenta">Magenta</option>
-                                  <option value="Mediumaquamarine">Mediumaquamarine</option>
-                                  <option value="Mediumblue">Mediumblue</option>
-                                  <option value="Mediumorchid">Mediumorchid</option>
-                                  <option value="Mediumpurple">Mediumpurple</option>
-                                  <option value="Mediumseagreen">Mediumseagreen</option>
-                                  <option value="Mediumslateblue">Mediumslateblue</option>
-                                  <option value="Mediumspringgreen">Mediumspringgreen</option>
-                                  <option value="Mediumturquoise">Mediumturquoise</option>
-                                  <option value="Mediumvioletred">Mediumvioletred</option>
-                                  <option value="Midnightblue">Midnightblue</option>
-                                  <option value="Mintcream">Mintcream</option>
-                                  <option value="Mistyrose">Mistyrose</option>
-                                  <option value="Moccasin">Moccasin</option>
-                                  <option value="Navajowhite">Navajowhite</option>
-                                  <option value="Oldlace">Oldlace</option>
-                                  <option value="Olivedrab">Olivedrab</option>
-                                  <option value="Orange">Orange</option>
-                                  <option value="Orangered">Orangered</option>
-                                  <option value="Orchid">Orchid</option>
-                                  <option value="Palegoldenrod">Palegoldenrod</option>
-                                  <option value="Palegreen">Palegreen</option>
-                                  <option value="Paleturquoise">Paleturquoise</option>
-                                  <option value="Palevioletred">Palevioletred</option>
-                                  <option value="Papayawhip">Papayawhip</option>
-                                  <option value="Peachpuff">Peachpuff</option>
-                                  <option value="Peru">Peru</option>
-                                  <option value="Pink">Pink</option>
-                                  <option value="Plum">Plum</option>
-                                  <option value="Powderblue">Powderblue</option>
-                                  <option value="Rosybrown">Rosybrown</option>
-                                  <option value="Royalblue">Royalblue</option>
-                                  <option value="Saddlebrown">Saddlebrown</option>
-                                  <option value="Salmon">Salmon</option>
-                                  <option value="Sandybrown">Sandybrown</option>
-                                  <option value="Seagreen">Seagreen</option>
-                                  <option value="Seashell">Seashell</option>
-                                  <option value="Sienna">Sienna</option>
-                                  <option value="Skyblue">Skyblue</option>
-                                  <option value="Slateblue">Slateblue</option>
-                                  <option value="Slategray">Slategray</option>
-                                  <option value="Slategrey">Slategrey</option>
-                                  <option value="Snow">Snow</option>
-                                  <option value="Springgreen">Springgreen</option>
-                                  <option value="Steelblue">Steelblue</option>
-                                  <option value="Tan">Tan</option>
-                                  <option value="Thistle">Thistle</option>
-                                  <option value="Tomato">Tomato</option>
-                                  <option value="Turquoise">Turquoise</option>
-                                  <option value="Violet">Violet</option>
-                                  <option value="Wheat">Wheat</option>
-                                  <option value="Whitesmoke">Whitesmoke</option>
-                                  <option value="Yellowgreen">Yellowgreen</option>
+                                <select class="form-select" name="headline_text_color" aria-label="Default select example" id="headline_text_color">
+                                  @foreach($headlineColor as $headlineColors)
+                                  <option value="{{$headlineColors->name}}" {{ ( $headlineColors->name == 'Custom' ) ? 'selected' : '' }}>{{ $headlineColors->name }}</option>
+                                  @endforeach
                                 </select>
                               </div>
-                              <div class="col-6">
+
+                              <div class="col-6" id="custom_text_color">
                                 <label class="mt-2" for="favcolor">Custom Text Color:</label>
-                                <input type="color" id="favcolor" name="custom_text_color" value="#FFC0CB">
+                                <input type="color" id="custom_text_color" name="custom_text_color" value="#FFC0CB">
                               </div>
                             </div>
                           </div>
@@ -834,4 +540,33 @@
             </form>
           </div>
         </section>
+
+<script>
+  $("#headlin_color").change(function(){
+      var selectedValue = $(this).val();
+      console.log('selectedValue',selectedValue);
+      if(selectedValue == 'Custom'){
+        $('#Headline_custom_color').show();
+      }else{
+        $('#Headline_custom_color').hide();
+      }
+    });
+
+    $("#headline_text_color").change(function(){
+      var selectedValue = $(this).val();
+      console.log('selectedValue',selectedValue);
+      if(selectedValue == 'Custom'){
+        console.log("asdsagdvsavd");
+        $('#custom_text_color').show();
+      }else{
+        $('#custom_text_color').hide();
+      }
+    });
+
+    jQuery('#favcolor_headline').on('change',function(){
+      console.log(jQuery(this).val());
+        jQuery('#choosen-color').val(jQuery(this).val());
+  });
+
+</script>
 @endsection

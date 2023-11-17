@@ -12,4 +12,19 @@ class Perporty extends Model
     protected $table = 'property';
 
     public $timestamps = false;
+
+    public function propertyImage()
+    {
+        return $this->hasOne(PropertyImage::class,'property_id','id');
+    }
+
+    public function propertyOption()
+    {
+        return $this->hasOne(PropertyOptions::class,'property_id','id');
+    }
+
+    public function PropertySmartphone()
+    {
+        return $this->hasOne(PropertySmartphone::class,'property_id','id');
+    }
 }

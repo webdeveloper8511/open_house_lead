@@ -70,7 +70,7 @@ class UserControllers extends Controller
         Auth::login($user);
 
         // Redirect the user to the home page or any other desired page
-        return redirect()->intended('/login');
+        return redirect('/login')->with('success', 'You have Successfully Registered! Please Login');
     }
 
     public function forgetPassword(){
@@ -95,8 +95,7 @@ class UserControllers extends Controller
             $message->to($request->email);
             $message->subject('Reset Password');
         });
-
-        return back()->with('message', 'We have e-mailed your password reset link!');
+        return redirect('/')->with('success', 'We have e-mailed your password reset link!');
     }
 
     public function showResetPasswordForm($token)
@@ -128,12 +127,12 @@ class UserControllers extends Controller
 
         DB::table('password_reset_tokens')->where(['email'=> $request->email])->delete();
 
-        return redirect('/')->with('message', 'Your password has been changed!');
+        return redirect('/')->with('success', 'Your password has been changed! Please Login');
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('/')->with('success', 'You have been logged out successfully.');
     }
 }
